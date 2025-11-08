@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sehaj Fitness</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Sehaj Fitness</h1>
+  <p>Transform your Body • Mind • Strength</p>
+</header>
+
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1594737625785-c84e54d80c86" alt="Gym Training">
+  <h2>Start Your Fitness Journey Today</h2>
+  <button>Join Now</button>
+</section>
+
+<footer>
+  <p>© 2025 Sehaj Fitness | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
