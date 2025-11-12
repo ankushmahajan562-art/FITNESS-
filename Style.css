@@ -142,4 +142,8 @@ button {
 
 button:hover {
   background-color: #023e8a;
+}/* ===== Contact Page ===== */
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto;
 }
