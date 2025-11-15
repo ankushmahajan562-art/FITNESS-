@@ -93,3 +93,34 @@ footer {
 .contact-form button {
   width: 100%;
 }
+/* ABOUT PAGE HERO */
+.about-hero {
+  background: url('your-image.jpg') center/cover no-repeat;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.about-hero h1 {
+  font-size: 48px;
+}
+
+.about-content {
+  padding: 40px 20px;
+}
+
+.about-content .container {
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.about-content h2 {
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+.about-content ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  }
