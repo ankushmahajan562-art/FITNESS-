@@ -109,7 +109,56 @@ footer {
   padding: 40px 20px;
 }
 
-.about-content .container {
+.about-content .container {/* ANIMATION BASE */
+.fade-up, .fade-down, .fade-left, .fade-right {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.2s forwards;
+}
+
+.fade-down {
+  transform: translateY(-20px);
+  animation: fadeDown 1.2s forwards;
+}
+
+.fade-left {
+  transform: translateX(-40px);
+  animation: fadeLeft 1.2s forwards;
+}
+
+.fade-right {
+  transform: translateX(40px);
+  animation: fadeRight 1.2s forwards;
+}
+
+/* KEYFRAMES */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  }
   max-width: 900px;
   margin: auto;
   line-height: 1.8;
