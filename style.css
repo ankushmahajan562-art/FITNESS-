@@ -109,7 +109,11 @@ footer {
   padding: 40px 20px;
 }
 
-.about-content .container {/* ANIMATION BASE */
+..about-content .container {
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+}
 .fade-up, .fade-down, .fade-left, .fade-right {
   opacity: 0;
   transform: translateY(20px);
