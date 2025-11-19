@@ -211,3 +211,7 @@ footer {
   line-height: 1.6;
   max-width: 600px;
   }
+.logo img {
+  height: 50px; /* adjust size */
+  width: auto;
+}
