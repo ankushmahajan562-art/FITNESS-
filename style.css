@@ -142,3 +142,49 @@ nav ul li a.active {
   color: #dcdcdc;
   line-height: 1.7;
    }
+/* ===== HERO SECTION ===== */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.hero-section h1 {
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.hero-section p {
+  margin: 15px 0 25px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #2389ff;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: #1f7be0;
+  transform: scale(1.05);
+}
+
+.hero-image img {
+  width: 320px;
+  border-radius: 20px;
+  }
