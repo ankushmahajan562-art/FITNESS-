@@ -1,0 +1,122 @@
+/* ====== GLOBAL DEFAULTS ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6e27ff, #ff4f70);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ====== NAVBAR ====== */
+nav {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+nav a {
+  color: white;
+  font-size: 18px;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffce00;
+  transform: scale(1.1);
+}
+
+/* ====== HERO SECTION ====== */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 150px 20px 20px 20px;
+}
+
+.hero h1 {
+  font-size: 60px;
+  font-weight: 800;
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+.hero p {
+  font-size: 22px;
+  margin-top: 15px;
+  animation: fadeIn 1.8s ease-in-out forwards;
+}
+
+/* ====== PROFILE IMAGE POP UP & FADE ====== */
+.hero img {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  margin-top: 30px;
+  object-fit: cover;
+  border: 5px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.3);
+  animation: popup 0.9s ease-out forwards, fadeIn 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+/* ====== ANIMATIONS ====== */
+@keyframes popup {
+  0% {
+    transform: scale(0.5);
+  }
+  80% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== BUTTONS ====== */
+.btn {
+  margin-top: 25px;
+  padding: 14px 32px;
+  background: white;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+  animation: fadeIn 2.2s ease-in-out forwards;
+}
+
+.btn:hover {
+  background: #ffce00;
+  transform: translateY(-4px);
+  }
