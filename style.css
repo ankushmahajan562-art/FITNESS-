@@ -120,3 +120,12 @@ nav a:hover {
   background: #ffce00;
   transform: translateY(-4px);
   }
+/* FIX IMAGE SIZE ON WEBSITE */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+  object-fit: cover;
+  border-radius: 12px;
+    }
