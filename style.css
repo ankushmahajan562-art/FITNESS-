@@ -123,5 +123,14 @@ nav a:hover {
   border-radius: 50% !important;
   display: block;
   margin: 20px auto;}
-
+.logo-img {
+  width: 160px;       /* small size like a real website logo */
+  height: 160px;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+  margin: 20px auto 10px auto;
+  animation: fadeIn 1.2s ease-out forwards;
+  opacity: 0;
+  }
 
