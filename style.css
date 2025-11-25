@@ -133,4 +133,39 @@ nav a:hover {
   animation: fadeIn 1.2s ease-out forwards;
   opacity: 0;
   }
+/* ===== FOUNDER SECTION ===== */
+.founder-section {
+  text-align: center;
+  padding: 50px 20px;
+}
 
+.founder-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.founder-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards, popup 0.9s ease-out forwards;
+}
+
+/* Name under photo */
+.founder-section h3 {
+  font-size: 26px;
+  margin-top: 10px;
+}
+
+/* Description */
+.founder-section p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 15px auto;
+  line-height: 1.6;
+    }
