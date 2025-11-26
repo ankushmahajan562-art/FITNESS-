@@ -1,171 +1,103 @@
-/* ====== GLOBAL DEFAULTS ====== */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #6e27ff, #ff4f70);
-  color: #ffffff;
-  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #222;
 }
 
-/* ====== NAVBAR ====== */
+/* NAVBAR */
 nav {
   width: 100%;
-  padding: 20px;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(15px);
-  background: rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 50;
+  z-index: 1000;
 }
 
-nav a {
-  color: white;
-  font-size: 18px;
-  margin-left: 20px;
+nav img {
+  height: 50px;
+  border-radius: 10px;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+nav ul li a {
   text-decoration: none;
+  color: #222;
+  font-weight: bold;
   transition: 0.3s;
 }
 
-nav a:hover {
-  color: #ffce00;
-  transform: scale(1.1);
+nav ul li a:hover {
+  color: #ff4d88;
 }
 
-/* ====== HERO SECTION ====== */
+/* HERO SECTION */
 .hero {
   height: 100vh;
+  background: url("1764156551492.jpg") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 80px;
+}
+
+.hero-text {
+  background: rgba(0,0,0,0.4);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 15px;
+  animation: fadeUp 1.2s ease-out;
+}
+
+/* FADE UP ANIMATION */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ABOUT SECTION */
+.about-container {
+  display: flex;
   flex-direction: column;
-  text-align: center;
-  padding: 150px 20px 20px 20px;
-}
-
-.hero h1 {
-  font-size: 60px;
-  font-weight: 800;
-  animation: fadeIn 1.2s ease-in-out forwards;
-}
-
-.hero p {
-  font-size: 22px;
-  margin-top: 15px;
-  animation: fadeIn 1.8s ease-in-out forwards;
-}
-
-/* ====== PROFILE IMAGE POP UP & FADE ====== */
-.hero img {
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  margin-top: 30px;
-  object-fit: cover;
-  border: 5px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.3);
-  animation: popup 0.9s ease-out forwards, fadeIn 1.2s ease-out forwards;
-  opacity: 0;
-}
-
-/* ====== ANIMATIONS ====== */
-@keyframes popup {
-  0% {
-    transform: scale(0.5);
-  }
-  80% {
-    transform: scale(1.08);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ====== BUTTONS ====== */
-.btn {
-  margin-top: 25px;
-  padding: 14px 32px;
-  background: white;
-  color: #333;
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  transition: 0.25s;
-  animation: fadeIn 2.2s ease-in-out forwards;
-/* FORCE ALL IMAGES TO STAY SMALL AND CIRCLE */
-.hero img,
-.about img {
-  width: 220px !important;
-  height: 220px !important;
-  object-fit: cover !important;
-  border-radius: 50% !important;
-  display: block;
-  margin: 20px auto;}
-.logo-img {
-  width: 160px;       /* small size like a real website logo */
-  height: 160px;
-  object-fit: contain;
-  border-radius: 50%;
-  display: block;
-  margin: 20px auto 10px auto;
-  animation: fadeIn 1.2s ease-out forwards;
-  opacity: 0;
-  }
-/* ===== FOUNDER SECTION ===== */
-.founder-section {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.founder-section h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+  align-items: center;
+  padding: 70px 20px;
 }
 
 .founder-img {
   width: 180px;
   height: 180px;
   border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  animation: fadeUp 1.2s ease-out;
+  border: 5px solid #ff4d88;
+}
+
+.founder-img img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 4px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-  margin-bottom: 15px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-out forwards, popup 0.9s ease-out forwards;
 }
 
-/* Name under photo */
-.founder-section h3 {
-  font-size: 26px;
-  margin-top: 10px;
-}
-
-/* Description */
-.founder-section p {
-  font-size: 18px;
+.about-text {
   max-width: 600px;
-  margin: 15px auto;
-  line-height: 1.6;
-    }
+  text-align: center;
+  font-size: 18px;
+  animation: fadeUp 1.3s ease-out;
+  }  
