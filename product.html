@@ -1,0 +1,53 @@
+<section class="products">
+    <h1>Our Products</h1>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="product1.jpg" alt="Product 1">
+            <h3>Product Name 1</h3>
+            <button class="view-btn" onclick="openPopup('product1.jpg')">View</button>
+        </div>
+
+        <div class="product-card">
+            <img src="product2.jpg" alt="Product 2">
+            <h3>Product Name 2</h3>
+            <button class="view-btn" onclick="openPopup('product2.jpg')">View</button>
+        </div>
+
+        <div class="product-card">
+            <img src="product3.jpg" alt="Product 3">
+            <h3>Product Name 3</h3>
+            <button class="view-btn" onclick="openPopup('product3.jpg')">View</button>
+        </div>
+
+        <div class="product-card">
+            <img src="product4.jpg" alt="Product 4">
+            <h3>Product Name 4</h3>
+            <button class="view-btn" onclick="openPopup('product4.jpg')">View</button>
+        </div>
+
+        <div class="product-card">
+            <img src="product5.jpg" alt="Product 5">
+            <h3>Product Name 5</h3>
+            <button class="view-btn" onclick="openPopup('product5.jpg')">View</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+    <span onclick="closePopup()" class="close-btn">&times;</span>
+    <img id="popup-img" src="">
+</div>
+
+<script>
+function openPopup(image) {
+    document.getElementById("popup-img").src = image;
+    document.getElementById("popup").style.display = "flex";
+}
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+  </script>
