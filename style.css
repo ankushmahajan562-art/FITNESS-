@@ -242,3 +242,66 @@ nav ul li a:hover {
 .contact-container button:hover {
   background: #ff2a6a;
   }
+.products {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.product-card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.view-btn {
+  margin-top: 12px;
+  padding: 12px 25px;
+  background: #ffce00;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup img {
+  width: 80%;
+  max-width: 400px;
+  border-radius: 15px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+}
