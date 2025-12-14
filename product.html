@@ -102,6 +102,12 @@ function openProduct(id) {
 function closePopup() {
   document.getElementById("productPopup").style.display = "none";
 }
+<div id="productPopup" style="display:none;">
+  <span onclick="closePopup()">X</span>
+  <img id="popupImg">
+  <h2 id="popupTitle"></h2>
+  <p id="popupPrice"></p>
+</div>  
   </script> 
 </body>
 
