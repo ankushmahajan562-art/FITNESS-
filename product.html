@@ -62,4 +62,46 @@
   </div>
 </section>
 
-  </body>
+  <script>
+const products = {
+  1: {
+    title: "Product 1",
+    price: "₹499",
+    img: "pexels-pixabay-39671.jpg"
+  },
+  2: {
+    title: "Product 2",
+    price: "₹599",
+    img: "pexels-n-voitkevich-5412249.jpg"
+  },
+  3: {
+    title: "Product 3",
+    price: "₹699",
+    img: "pexels-mikhail-nilov-6739946.jpg"
+  },
+  4: {
+    title: "Product 4",
+    price: "₹799",
+    img: "pexels-cottonbro-5741049.jpg"
+  },
+  5: {
+    title: "Product 5",
+    price: "₹899",
+    img: "pexels-andres-ayrton-6551132.jpg"
+  }
+};
+
+function openProduct(id) {
+  document.getElementById("popupImg").src = products[id].img;
+  document.getElementById("popupTitle").innerText = products[id].title;
+  document.getElementById("popupPrice").innerText = products[id].price;
+
+  document.getElementById("productPopup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("productPopup").style.display = "none";
+}
+  </script> 
+</body>
+
