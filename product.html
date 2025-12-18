@@ -1,14 +1,15 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Products</title>
+  <title>Our Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ===== NAVBAR ===== -->
+<!-- NAVIGATION -->
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
@@ -16,95 +17,110 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-<!-- ===== PRODUCTS SECTION ===== -->
+<!-- PRODUCTS SECTION -->
 <section class="products">
   <h1>Our Products</h1>
 
   <div class="product-grid">
 
+    <!-- PRODUCT 1 -->
     <div class="product-card">
       <img src="pexels-pixabay-39671.jpg">
       <h3>Healthy Snack Mix</h3>
-      <p class="price">₹199</p>
+      <p>₹199</p>
       <button onclick="openProduct(
         'pexels-pixabay-39671.jpg',
         'Healthy Snack Mix',
         '₹199',
-        'High-protein healthy snack for daily energy'
+        'High protein healthy snack for fitness lovers.'
       )">View</button>
     </div>
 
+    <!-- PRODUCT 2 -->
     <div class="product-card">
       <img src="pexels-n-voitkevich-5412249.jpg">
       <h3>Protein Cookies</h3>
-      <p class="price">₹249</p>
+      <p>₹249</p>
       <button onclick="openProduct(
         'pexels-n-voitkevich-5412249.jpg',
         'Protein Cookies',
         '₹249',
-        'Delicious cookies with extra protein'
+        'Tasty cookies with high protein content.'
       )">View</button>
     </div>
 
+    <!-- PRODUCT 3 -->
     <div class="product-card">
       <img src="pexels-mikhail-nilov-6739946.jpg">
       <h3>Energy Bars</h3>
-      <p class="price">₹299</p>
+      <p>₹299</p>
       <button onclick="openProduct(
         'pexels-mikhail-nilov-6739946.jpg',
         'Energy Bars',
         '₹299',
-        'Instant energy bars for workouts'
+        'Instant energy bars for workout & travel.'
       )">View</button>
     </div>
 
+    <!-- PRODUCT 4 -->
     <div class="product-card">
       <img src="pexels-cottonbro-5741049.jpg">
       <h3>Fitness Chips</h3>
-      <p class="price">₹149</p>
+      <p>₹179</p>
       <button onclick="openProduct(
         'pexels-cottonbro-5741049.jpg',
         'Fitness Chips',
-        '₹149',
-        'Low-fat crispy fitness chips'
+        '₹179',
+        'Crunchy & healthy alternative to junk food.'
       )">View</button>
     </div>
 
+    <!-- PRODUCT 5 -->
     <div class="product-card">
       <img src="pexels-andres-ayrton-6551132.jpg">
-      <h3>Protein Shaker</h3>
-      <p class="price">₹399</p>
+      <h3>Protein Shake</h3>
+      <p>₹349</p>
       <button onclick="openProduct(
         'pexels-andres-ayrton-6551132.jpg',
-        'Protein Shaker',
-        '₹399',
-        'Premium protein shaker bottle'
+        'Protein Shake',
+        '₹349',
+        'Complete protein shake for muscle recovery.'
       )">View</button>
     </div>
 
   </div>
 </section>
 
-<!-- ===== POPUP (DO NOT MOVE) ===== -->
+<!-- POPUP -->
 <div id="productPopup" class="popup">
   <div class="popup-box">
     <span class="close" onclick="closeProduct()">×</span>
+
     <img id="popupImg">
     <h2 id="popupTitle"></h2>
     <p id="popupPrice"></p>
     <p id="popupDesc"></p>
-    <button>Add to Cart</button>
-    <button>Buy Now</button>
+
+    <!-- SAMPLE VIDEO -->
+    <video controls id="popupVideo">
+      <source src="sample-video.mp4" type="video/mp4">
+    </video>
+
+    <div class="popup-btns">
+      <button class="cart-btn">Add to Cart</button>
+      <button class="buy-btn">Buy Now</button>
+    </div>
   </div>
 </div>
 
-<!-- ===== JAVASCRIPT (BOTTOM ONLY) ===== -->
+<!-- JAVASCRIPT -->
 <script>
 function openProduct(img, title, price, desc) {
   document.getElementById("popupImg").src = img;
   document.getElementById("popupTitle").innerText = title;
   document.getElementById("popupPrice").innerText = price;
   document.getElementById("popupDesc").innerText = desc;
+
   document.getElementById("productPopup").style.display = "flex";
 }
 
@@ -114,4 +130,5 @@ function closeProduct() {
 </script>
 
 </body>
-        </html>
+      </html>
+    
