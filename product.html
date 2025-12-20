@@ -115,20 +115,22 @@
 
 <!-- JAVASCRIPT -->
 <script>
-function openProduct(img, title, price, desc) {
+<script>
+function openProduct(img, name, price, desc, video) {
   document.getElementById("popupImg").src = img;
-  document.getElementById("popupTitle").innerText = title;
+  document.getElementById("popupName").innerText = name;
   document.getElementById("popupPrice").innerText = price;
   document.getElementById("popupDesc").innerText = desc;
+  document.getElementById("popupVideo").src = video;
 
   document.getElementById("productPopup").style.display = "flex";
 }
 
-function closeProduct() {
+function closePopup() {
   document.getElementById("productPopup").style.display = "none";
+  document.getElementById("popupVideo").pause();
 }
 </script>
-
 </body>
       </html>
     
