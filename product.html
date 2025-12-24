@@ -1,15 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Our Products</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Products</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Poppins, Arial, sans-serif;
+  background: #0d1117;
+  color: white;
+}
+
+nav {
+  padding: 15px 30px;
+  background: #161b22;
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.products {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.product-card {
+  background: #161b22;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.product-card h3 {
+  margin: 12px 0 5px;
+}
+
+.product-card p {
+  color: #1f8fff;
+  font-weight: bold;
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #2389ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ===== POPUP ===== */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.popup-box {
+  background: #161b22;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+.popup img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.popup video {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 12px;
+}
+
+.popup h2 {
+  margin: 10px 0 5px;
+}
+
+.popup .price {
+  color: #1f8fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.popup .btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.popup .btns button {
+  flex: 1;
+}
+
+.close {
+  margin-top: 15px;
+  background: #ff4f70;
+}
+</style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
@@ -17,132 +137,94 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-<!-- PRODUCTS SECTION -->
 <section class="products">
-  <h1>Our Products</h1>
+<h1>Our Products</h1>
 
-  <div class="product-grid">
+<div class="product-grid">
 
-    <!-- PRODUCT 1 -->
-    <div class="product-card">
-      <img src="pexels-pixabay-39671.jpg">
-      <h3>Healthy Snack Mix</h3>
-      <p>₹199</p>
-      <button onclick=".<button onclick="openProduct(
-'pexels-pixabay-39671.jpg',
-'Healthy Snack Mix',
-'₹299',
-'Nutritious snack made with natural ingredients for daily energy.',
-'6174444-hd_1920_1080_30fps.mp4
-)">
-View
-</button>
-    </div>
+<div class="product-card">
+  <img src="pexels-pixabay-39671.jpg">
+  <h3>Product 1</h3>
+  <p>₹499</p>
+  <button onclick="openPopup(
+  'Product 1','₹499',
+  'pexels-pixabay-39671.jpg',
+  '4438080-hd_1920_1080_25fps.mp4')">View</button>
+</div>
 
-    <!-- PRODUCT 2 -->
-    <div class="product-card">
-      <img src="pexels-n-voitkevich-5412249.jpg">
-      <h3>Protein Cookies</h3>
-      <p>₹249</p>
-      <button onclick="<button onclick="openProduct(
-'pexels-n-voitkevich-5412249.jpg',
-'Protein Cookies',
-'₹349',
-'High-protein cookies for fitness and daily nutrition.',
-'5730503-uhd_2160_4096_25fps.mp4'
-)"4438080-hd_1920_1080_25fps.mp4>
-View
-      </button>
-    </div>
+<div class="product-card">
+  <img src="pexels-n-voitkevich-5412249.jpg">
+  <h3>Product 2</h3>
+  <p>₹699</p>
+  <button onclick="openPopup(
+  'Product 2','₹699',
+  'pexels-n-voitkevich-5412249.jpg',
+  '6174444-hd_1920_1080_30fps.mp4')">View</button>
+</div>
 
-    <!-- PRODUCT 3 -->
-    <div class="product-card">
-      <img src="pexels-mikhail-nilov-6739946.jpg">
-      <h3>Energy Bars</h3>
-      <p>₹299</p>
-      <button onclick=".<button onclick="openProduct(
-'pexels-mikhail-nilov-6739946.jpg',
-'Energy Bars',
-'₹199',
-'Quick energy bars made for busy and active lifestyles.',
-''
-)">
-View
-</button>
-    </div>
+<div class="product-card">
+  <img src="pexels-mikhail-nilov-6739946.jpg">
+  <h3>Product 3</h3>
+  <p>₹899</p>
+  <button onclick="openPopup(
+  'Product 3','₹899',
+  'pexels-mikhail-nilov-6739946.jpg',
+  '14927265_1080_1920_60fps.mp4')">View</button>
+</div>
 
-    <!-- PRODUCT 4 -->
-    <div class="product-card">
-      <img src="pexels-cottonbro-5741049.jpg">
-      <h3>Fitness Chips</h3>
-      <p>₹179</p>
-      <button onclick.<button onclick="openProduct(
-'pexels-cottonbro-5741049.jpg',
-'Fitness Chips',
-'₹249',
-'Healthy baked chips with low oil and high taste.',
-'14927265_1080_1920_60fps.mp4'
-)">
-View
-      </button>
-    </div>
+<div class="product-card">
+  <img src="pexels-cottonbro-5741049.jpg">
+  <h3>Product 4</h3>
+  <p>₹999</p>
+  <button onclick="openPopup(
+  'Product 4','₹999',
+  'pexels-cottonbro-5741049.jpg',
+  '5730503-uhd_2160_4096_25fps.mp4')">View</button>
+</div>
 
-    <!-- PRODUCT 5 -->
-    <div class="product-card">
-      <img src="pexels-andres-ayrton-6551132.jpg">
-      <h3>Protein Shake</h3>
-      <p>₹349</p>
-      <button onclick="openProduct(
-        'pexels-andres-ayrton-6551132.jpg',
-        'Protein Shake',
-        '₹349',
-        'Complete protein shake for muscle recovery.'
-      )">View</button>
-    </div>
+<div class="product-card">
+  <img src="pexels-andres-ayrton-6551132.jpg">
+  <h3>Product 5</h3>
+  <p>₹1299</p>
+  <button onclick="openPopup(
+  'Product 5','₹1299',
+  'pexels-andres-ayrton-6551132.jpg',
+  '6815482-hd_1920_1080_25fps.mp4')">View</button>
+</div>
 
-  </div>
+</div>
 </section>
 
 <!-- POPUP -->
-<div id="productPopup" class="popup">
+<div class="popup" id="popup">
   <div class="popup-box">
-    <span class="close" onclick="closeProduct()">×</span>
+    <img id="pImg">
+    <video id="pVideo" controls></video>
+    <h2 id="pName"></h2>
+    <div class="price" id="pPrice"></div>
 
-    <img id="popupImg">
-    <h2 id="popupTitle"></h2>
-    <p id="popupPrice"></p>
-    <p id="popupDesc"></p>
-
-    <!-- SAMPLE VIDEO -->
-    <video controls id="popupVideo">
-      <source src="6815482-hd_1920_1080_25fps.mp4" type="video/mp4">
-    </video>
-
-    <div class="popup-btns">
-      <button class="cart-btn">Add to Cart</button>
-      <button class="buy-btn">Buy Now</button>
+    <div class="btns">
+      <button>Add to Cart</button>
+      <button>Buy Now</button>
     </div>
+
+    <button class="close" onclick="closePopup()">Close</button>
   </div>
 </div>
 
-<!-- JAVASCRIPT -->
 <script>
-<script>
-function openProduct(img, name, price, desc, video) {
-  document.getElementById("popupImg").src = img;
-  document.getElementById("popupName").innerText = name;
-  document.getElementById("popupPrice").innerText = price;
-  document.getElementById("popupDesc").innerText = desc;
-  document.getElementById("popupVideo").src = video;
-
-  document.getElementById("productPopup").style.display = "flex";
+function openPopup(name, price, img, video) {
+  document.getElementById("pName").innerText = name;
+  document.getElementById("pPrice").innerText = price;
+  document.getElementById("pImg").src = img;
+  document.getElementById("pVideo").src = video;
+  document.getElementById("popup").style.display = "flex";
 }
-
 function closePopup() {
-  document.getElementById("productPopup").style.display = "none";
-  document.getElementById("popupVideo").pause();
+  document.getElementById("popup").style.display = "none";
+  document.getElementById("pVideo").pause();
 }
 </script>
+
 </body>
-      </html>
-    
+    </html>
