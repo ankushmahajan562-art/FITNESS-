@@ -204,27 +204,30 @@ nav a {
     <div class="price" id="pPrice"></div>
 
     <div class="btns">
-      <button>Add to Cart</button>
-      <button>Buy Now</button>
-    </div>
-
-    <button class="close" onclick="closePopup()">Close</button>
+      <button onclick="buyWhatsApp()">Buy on WhatsApp</button>
   </div>
 </div>
 
 <script>
 function openPopup(name, price, img, video) {
-  document.getElementById("pName").innerText = name;
-  document.getElementById("pPrice").innerText = price;
-  document.getElementById("pImg").src = img;
-  document.getElementById("pVideo").src = video;
   document.getElementById("popup").style.display = "flex";
+  document.getElementById("popup-name").innerText = name;
+  document.getElementById("popup-price").innerText = price;
+  document.getElementById("popup-img").src = img;
+  document.getElementById("popup-video").src = video;
 }
+
 function closePopup() {
   document.getElementById("popup").style.display = "none";
-  document.getElementById("pVideo").pause();
+}
+
+function buyWhatsApp() {
+  window.open(
+    "https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20buy%20this%20product",
+    "_blank"
+  );
 }
 </script>
 
 </body>
-    </html>
+</html>
