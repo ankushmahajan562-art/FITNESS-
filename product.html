@@ -129,7 +129,24 @@ nav a {
 </head>
 
 <body>
+<!-- PRODUCT POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">×</span>
 
+    <img id="popup-img" src="" alt="Product Image">
+
+    <h2 id="popup-name"></h2>
+    <p id="popup-price"></p>
+
+    <video id="popup-video" controls playsinline preload="metadata"></video>
+
+    <div class="popup-buttons">
+      <a id="buy-btn" target="_blank">Buy on WhatsApp</a>
+      <button onclick="alert('Added to cart (demo)')">Add to Cart</button>
+    </div>
+  </div>
+</div>
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
@@ -227,24 +244,27 @@ function buyWhatsApp() {
     "_blank"
   );
 }
+</<script>
+function openPopup(name, price, img, video) {
+  const popup = document.getElementById("popup");
+  const vid = document.getElementById("popup-video");
+
+  popup.style.display = "flex";
+
+  document.getElementById("popup-name").innerText = name;
+  document.getElementById("popup-price").innerText = price;
+  document.getElementById("popup-img").src = img;
+
+  vid.pause();
+  vid.src = video;
+  vid.load();
+
+  document.getElementById("buy-btn").href =
+    "https://wa.me/91XXXXXXXXXX?text=I want to buy " + name;
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+  document.getElementById("popup-video").pause();
+}
 </script>
-<!-- PRODUCT POPUP -->
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close-btn" onclick="closePopup()">×</span>
-
-    <img id="popup-img" src="" alt="Product Image">
-
-    <h2 id="popup-name"></h2>
-    <p id="popup-price"></p>
-
-    <video id="popup-video" controls playsinline preload="metadata"></video>
-
-    <div class="popup-buttons">
-      <a id="buy-btn" target="_blank">Buy on WhatsApp</a>
-      <button onclick="alert('Added to cart (demo)')">Add to Cart</button>
-    </div>
-  </div>
-</div>
-</body>
-</html>
