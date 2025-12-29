@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>. 
+<head>
 <meta charset="UTF-8">
 <title>Products</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 <style>
 body {
   margin: 0;
-  font-family: Poppins, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background: #0d1117;
   color: white;
 }
@@ -22,17 +22,17 @@ nav {
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .products {
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
   gap: 25px;
   max-width: 1100px;
   margin: auto;
@@ -40,8 +40,8 @@ nav a {
 
 .product-card {
   background: #161b22;
-  border-radius: 15px;
   padding: 15px;
+  border-radius: 15px;
 }
 
 .product-card img {
@@ -49,15 +49,6 @@ nav a {
   height: 200px;
   object-fit: cover;
   border-radius: 12px;
-}
-
-.product-card h3 {
-  margin: 12px 0 5px;
-}
-
-.product-card p {
-  color: #1f8fff;
-  font-weight: bold;
 }
 
 .product-card button {
@@ -70,7 +61,7 @@ nav a {
   cursor: pointer;
 }
 
-/* ===== POPUP ===== */
+/* POPUP */
 .popup {
   position: fixed;
   inset: 0;
@@ -78,7 +69,7 @@ nav a {
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 999;
 }
 
 .popup-box {
@@ -90,39 +81,30 @@ nav a {
   text-align: center;
 }
 
-.popup img {
+.popup-box img,
+.popup-box video {
   width: 100%;
   border-radius: 12px;
-}
-
-.popup video {
-  width: 100%;
   margin-top: 10px;
-  border-radius: 12px;
 }
 
-.popup h2 {
-  margin: 10px 0 5px;
-}
-
-.popup .price {
+.popup-box .price {
   color: #1f8fff;
   font-size: 20px;
   font-weight: bold;
 }
 
-.popup .btns {
-  display: flex;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.popup .btns button {
-  flex: 1;
+.popup-box button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  background: #2389ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
 }
 
 .close {
-  margin-top: 15px;
   background: #ff4f70;
 }
 </style>
@@ -130,15 +112,6 @@ nav a {
 
 <body>
 
-
-    <video id="popup-video" controls playsinline preload="metadata"></video>
-
-    <div class="popup-buttons">
-      <a id="buy-btn" target="_blank">Buy on WhatsApp</a>
-      <button onclick="alert('Added to cart (demo)')">Add to Cart</button>
-    </div>
-  </div>
-</div>
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
@@ -156,9 +129,10 @@ nav a {
   <h3>Product 1</h3>
   <p>₹499</p>
   <button onclick="openPopup(
-  'Product 1','₹499',
-  'pexels-pixabay-39671.jpg',
-  '4438080-hd_1920_1080_25fps.mp4')">View</button>
+    'Product 1','₹499',
+    'pexels-pixabay-39671.jpg',
+    '4438080-hd_1920_1080_25fps.mp4'
+  )">View</button>
 </div>
 
 <div class="product-card">
@@ -166,39 +140,10 @@ nav a {
   <h3>Product 2</h3>
   <p>₹699</p>
   <button onclick="openPopup(
-  'Product 2','₹699',
-  'pexels-n-voitkevich-5412249.jpg',
-  '6174444-hd_1920_1080_30fps.mp4')">View</button>
-</div>
-
-<div class="product-card">
-  <img src="pexels-mikhail-nilov-6739946.jpg">
-  <h3>Product 3</h3>
-  <p>₹899</p>
-  <button onclick="openPopup(
-  'Product 3','₹899',
-  'pexels-mikhail-nilov-6739946.jpg',
-  '14927265_1080_1920_60fps.mp4')">View</button>
-</div>
-
-<div class="product-card">
-  <img src="pexels-cottonbro-5741049.jpg">
-  <h3>Product 4</h3>
-  <p>₹999</p>
-  <button onclick="openPopup(
-  'Product 4','₹999',
-  'pexels-cottonbro-5741049.jpg',
-  '5730503-uhd_2160_4096_25fps.mp4')">View</button>
-</div>
-
-<div class="product-card">
-  <img src="pexels-andres-ayrton-6551132.jpg">
-  <h3>Product 5</h3>
-  <p>₹1299</p>
-  <button onclick="openPopup(
-  'Product 5','₹1299',
-  'pexels-andres-ayrton-6551132.jpg',
-  '6815482-hd_1920_1080_25fps.mp4')">View</button>
+    'Product 2','₹699',
+    'pexels-n-voitkevich-5412249.jpg',
+    '6174444-hd_1920_1080_30fps.mp4'
+  )">View</button>
 </div>
 
 </div>
@@ -207,58 +152,40 @@ nav a {
 <!-- POPUP -->
 <div class="popup" id="popup">
   <div class="popup-box">
-    <img id="pImg">
-    <video id="pVideo" controls></video>
     <h2 id="pName"></h2>
     <div class="price" id="pPrice"></div>
+    <img id="pImg">
+    <video id="pVideo" controls></video>
 
-    <div class="btns">
-      <button onclick="buyWhatsApp()">Buy on WhatsApp</button>
+    <button id="buyBtn">Buy on WhatsApp</button>
+    <button class="close" onclick="closePopup()">Close</button>
   </div>
 </div>
 
 <script>
 function openPopup(name, price, img, video) {
   document.getElementById("popup").style.display = "flex";
-  document.getElementById("popup-name").innerText = name;
-  document.getElementById("popup-price").innerText = price;
-  document.getElementById("popup-img").src = img;
-  document.getElementById("popup-video").src = video;
+  document.getElementById("pName").innerText = name;
+  document.getElementById("pPrice").innerText = price;
+  document.getElementById("pImg").src = img;
+
+  const v = document.getElementById("pVideo");
+  v.src = video;
+  v.load();
+
+  document.getElementById("buyBtn").onclick = function () {
+    window.open(
+      "https://wa.me/91XXXXXXXXXX?text=I want to buy " + name,
+      "_blank"
+    );
+  };
 }
 
 function closePopup() {
   document.getElementById("popup").style.display = "none";
-}
-
-function buyWhatsApp() {
-  window.open(
-    "https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20buy%20this%20product",
-    "_blank"
-  );
-}
-</<script>
-function openPopup(name, price, img, video) {
-  const popup = document.getElementById("popup");
-  const vid = document.getElementById("popup-video");
-
-  popup.style.display = "flex";
-
-  document.getElementById("popup-name").innerText = name;
-  document.getElementById("popup-price").innerText = price;
-  document.getElementById("popup-img").src = img;
-
-  vid.pause();
-  vid.src = video;
-  vid.load();
-
-  document.getElementById("buy-btn").href =
-    "https://wa.me/91XXXXXXXXXX?text=I want to buy " + name;
-}
-
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
-  document.getElementById("popup-video").pause();
+  document.getElementById("pVideo").pause();
 }
 </script>
+
 </body>
 </html>
