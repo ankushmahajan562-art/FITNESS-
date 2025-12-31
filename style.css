@@ -706,3 +706,23 @@ nav ul li a:hover {
   float: right;
   cursor: pointer;
   }
+.out-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.product-card {
+  position: relative;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  }
