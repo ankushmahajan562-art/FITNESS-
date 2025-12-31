@@ -147,7 +147,7 @@ nav a {
 </div>
 
 </div>
-</section>
+</sectionv>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
@@ -189,3 +189,15 @@ function closePopup() {
 
 </body>
 </html>
+function addToCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(currentProduct);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Product added to cart!");
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+  document.getElementById("pVideo").pause();
+}
+      </script>
