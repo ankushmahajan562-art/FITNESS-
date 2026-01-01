@@ -124,13 +124,15 @@ nav a {
 
 <div class="product-grid">
 
-
- <div class="product-card disabled">
+<div class="product-card disabled">
   <span class="out-badge">OUT OF STOCK</span>
-   <img 
-     src="pexels-pixabay-39671.jpg">
+
+  <img src="pexels-pixabay-39671.jpg">
   <h3>Product 1</h3>
   <p>₹499</p>
+
+  <button disabled>Out of Stock</button>
+</div>
   <button onclick="openPopup(
     'Product 1','₹499',
     'pexels-pixabay-39671.jpg',
@@ -165,8 +167,12 @@ nav a {
   </div>
 </div>
 
-<script>
+<<script>
+let currentProduct = null;
+
 function openPopup(name, price, img, video) {
+  currentProduct = { name, price, img };
+
   document.getElementById("popup").style.display = "flex";
   document.getElementById("pName").innerText = name;
   document.getElementById("pPrice").innerText = price;
@@ -188,19 +194,11 @@ function closePopup() {
   document.getElementById("popup").style.display = "none";
   document.getElementById("pVideo").pause();
 }
-</script>
 
-</body>
-</html>
 function addToCart() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push(currentProduct);
   localStorage.setItem("cart", JSON.stringify(cart));
   alert("Product added to cart!");
 }
-
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
-  document.getElementById("pVideo").pause();
-}
-      </script>
+</script>
