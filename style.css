@@ -726,3 +726,28 @@ nav ul li a:hover {
   opacity: 0.5;
   pointer-events: none;
   }
+/* OUT OF STOCK */
+.out-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.product-card {
+  position: relative;
+}
+
+.product-card.disabled {
+  opacity: 0.6;
+}
+
+.product-card.disabled button {
+  background: gray;
+  cursor: not-allowed;
+  }
