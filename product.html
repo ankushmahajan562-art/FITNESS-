@@ -168,19 +168,26 @@ nav a {
 </div>
 
 <<script>
-let currentProduct = null;
-
+<script>
 function openPopup(name, price, img, video) {
-  currentProduct = { name, price, img };
+  const popup = document.getElementById("popup");
+  const v = document.getElementById("pVideo");
 
-  document.getElementById("popup").style.display = "flex";
+  popup.style.display = "flex";
+
   document.getElementById("pName").innerText = name;
   document.getElementById("pPrice").innerText = price;
   document.getElementById("pImg").src = img;
 
-  const v = document.getElementById("pVideo");
-  v.src = video;
+  // 🔥 HARD RESET VIDEO
+  v.pause();
+  v.removeAttribute("src");
   v.load();
+
+  setTimeout(() => {
+    v.src = video;
+    v.load();
+  }, 200);
 
   document.getElementById("buyBtn").onclick = function () {
     window.open(
@@ -191,6 +198,14 @@ function openPopup(name, price, img, video) {
 }
 
 function closePopup() {
+  const v = document.getElementById("pVideo");
+  v.pause();
+  v.removeAttribute("src");
+  v.load();
+  document.getElementById("popup").style.display = "none";
+}
+</script>
+  function closePopup() {
   document.getElementById("popup").style.display = "none";
   document.getElementById("pVideo").pause();
 }
