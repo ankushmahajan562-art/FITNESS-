@@ -112,7 +112,7 @@ nav a {
 
 <body>
 
-<nav>
+<<nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="product.html">Products</a>
@@ -120,25 +120,29 @@ nav a {
 </nav>
 
 <section class="products">
-<h1>Our Products</h1>
+  <h1>Our Products</h1>
 
-<div class="product-grid">
+  <div class="product-grid">
 
-<div class="product-card disabled">
-  <span class="out-badge">OUT OF STOCK</span>
+    <!-- OUT OF STOCK PRODUCT -->
+    <div class="product-card disabled">
+      <span class="out-badge">OUT OF STOCK</span>
+      <img src="pexels-pixabay-39671.jpg">
+      <h3>Product 1</h3>
+      <p>₹499</p>
+      <button disabled>Out of Stock</button>
+    </div>
 
-  <img src="pexels-pixabay-39671.jpg">
-  <h3>Product 1</h3>
-  <p>₹499</p>
+    <!-- AVAILABLE PRODUCT -->
+    <div class="product-card">
+      <img src="pexels-n-voitkevich-5412249.jpg">
+      <h3>Product 2</h3>
+      <p>₹699</p>
+      <button>View</button>
+    </div>
 
-  <button disabled>Out of Stock</button>
-</div>
-  <button onclick="openPopup(
-    'Product 1','₹499',
-    'pexels-pixabay-39671.jpg',
-    '4438080-hd_1920_1080_25fps.mp4'
-  )">View</button>
-</div>
+  </div>
+</section>
 
 <div class="product-card">
   <img src="pexels-n-voitkevich-5412249.jpg">
