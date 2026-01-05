@@ -53,49 +53,6 @@ nav a {
 
 .product-card button {
   margin-top: 10px;
-  padding: 10px 20px;
-  background: #2389ff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* POPUP */
-.popup {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
-.popup-box {
-  background: #161b22;
-  padding: 20px;
-  border-radius: 15px;
-  max-width: 500px;
-  width: 90%;
-  text-align: center;
-}
-
-.popup-box img,
-.popup-box video {
-  width: 100%;
-  border-radius: 12px;
-  margin-top: 10px;
-}
-
-.popup-box .price {
-  color: #1f8fff;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.popup-box button {
-  margin-top: 10px;
   padding: 10px;
   width: 100%;
   background: #2389ff;
@@ -104,9 +61,65 @@ nav a {
   border-radius: 8px;
 }
 
-.close {
+.out {
+  background: #444;
+  cursor: not-allowed;
+}
+</style>
+</head>
 
-<!-- POPUP -->
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="product.html">Products</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="products">
+<h1>Our Products</h1>
+
+<div class="product-grid">
+
+  <!-- PRODUCT 1 (OUT OF STOCK) -->
+  <div class="product-card">
+    <img src="pexels-pixabay-39671.jpg">
+    <h3>Product 1</h3>
+    <p>₹499</p>
+    <button class="out" disabled>Out of Stock</button>
+  </div>
+
+  <!-- PRODUCT 2 -->
+  <div class="product-card">
+    <img src="pexels-n-voitkevich-5412249.jpg">
+    <h3>Product 2</h3>
+    <p>₹699</p>
+    <button>View</button>
+  </div>
+
+  <!-- PRODUCT 3 -->
+  <div class="product-card">
+    <img src="pexels-mikhail-nilov-6739946.jpg">
+    <h3>Product 3</h3>
+    <p>₹899</p>
+    <button>View</button>
+  </div>
+
+  <!-- PRODUCT 4 -->
+  <div class="product-card">
+    <img src="pexels-cottonbro-5741049.jpg">
+    <h3>Product 4</h3>
+    <p>₹999</p>
+    <button>View</button>
+  </div>
+
+</div>
+</section>
+
+</body>
+</html>
+  
 <div class="popup" id="popup">
   <div class="popup-box">
     <h2 id="pName"></h2>
