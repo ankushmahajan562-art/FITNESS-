@@ -105,58 +105,6 @@ nav a {
 }
 
 .close {
-  background: #ff4f70;
-}
-</style>
-</head>
-
-<body>
-
-<<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="product.html">Products</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<section class="products">
-  <h1>Our Products</h1>
-
-  <div class="product-grid">
-
-    <!-- OUT OF STOCK PRODUCT -->
-    <div class="product-card disabled">
-      <span class="out-badge">OUT OF STOCK</span>
-      <img src="pexels-pixabay-39671.jpg">
-      <h3>Product 1</h3>
-      <p>₹499</p>
-      <button disabled>Out of Stock</button>
-    </div>
-
-    <!-- AVAILABLE PRODUCT -->
-    <div class="product-card">
-      <img src="pexels-n-voitkevich-5412249.jpg">
-      <h3>Product 2</h3>
-      <p>₹699</p>
-      <button>View</button>
-    </div>
-
-  </div>
-</section>
-
-<div class="product-card">
-  <img src="pexels-n-voitkevich-5412249.jpg">
-  <h3>Product 2</h3>
-  <p>₹699</p>
-  <button onclick="openPopup(
-    'Product 2','₹699',
-    'pexels-n-voitkevich-5412249.jpg',
-    '6174444-hd_1920_1080_30fps.mp4'
-  )">View</button>
-</div>
-
-</div>
-</sectionv>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
@@ -171,7 +119,7 @@ nav a {
   </div>
 </div>
 
-<<script>
+<script>
 <script>
 function openPopup(name, price, img, video) {
   const popup = document.getElementById("popup");
