@@ -1,198 +1,170 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Products</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0d1117;
-  color: white;
-}
-
-nav {
-  padding: 15px 30px;
-  background: #161b22;
-  display: flex;
-  gap: 20px;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.products {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 25px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.product-card {
-  background: #161b22;
-  padding: 15px;
-  border-radius: 15px;
-}
-
-.product-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.product-card button {
-  margin-top: 10px;
-  padding: 10px;
-  width: 100%;
-  background: #2389ff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-}
-
-.out {
-  background: #444;
-  cursor: not-allowed;
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="product.html">Products</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<section class="products">
-<h1>Our Products</h1>
-
-<div class="product-grid">
-
-  <!-- PRODUCT 1 (OUT OF STOCK) -->
-  <div class="product-card">
-    <img src="pexels-pixabay-39671.jpg">
-    <h3>Product 1</h3>
-    <p>₹499</p>
-    <button class="out" disabled>Out of Stock</button>
-  </div>
-
-  <!-- PRODUCT 2 -->
-  <div class="product-card">
-    <img src="pexels-n-voitkevich-5412249.jpg">
-    <h3>Product 2</h3>
-    <p>₹699</p>
-    <button>View</button>
-  </div>
-
-  <!-- PRODUCT 3 -->
-  <div class="product-card">
-    <img src="pexels-mikhail-nilov-6739946.jpg">
-    <h3>Product 3</h3>
-    <p>₹899</p>
-    <button>View</button>
-  </div>
-
-  <!-- PRODUCT 4 -->
-  <div class="product-card">
-    <img src="pexels-cottonbro-5741049.jpg">
-    <h3>Product 4</h3>
-    <p>₹999</p>
-    <button>View</button>
-  </div>
-
-</div>
-</section>
-
-</body>
-</html>
+<html lang="en">  
+<head>  
+  <meta charset="utf-8" />  
+  <meta name="viewport" content="width=device-width,initial-scale=1" />  
+  <title>Product Popup Example</title>  
+  <style>  
+    /* Minimal styles for the demo popup */  
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin: 0; padding: 20px; }  
+    .popup { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); z-index: 9999; }  
+    .popup-box { background: #fff; padding: 16px; max-width: 800px; width: 95%; border-radius: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }  
+    .popup-box img { max-width: 100%; height: auto; border-radius: 4px; }  
+    .controls { display:flex; gap:8px; margin-top: 8px; }  
+    button { padding: 8px 12px; border: 1px solid #ccc; background: #f5f5f5; cursor: pointer; border-radius: 4px; }  
+    .close-btn { position: absolute; top: 12px; right: 12px; background: transparent; border: none; color: #fff; font-size: 20px; cursor: pointer; }  
+    .price { font-weight: 700; color: #222; margin-top: 6px; }  
+    @media (max-width:600px) { .popup-box { grid-template-columns: 1fr; } }  
+  </style>  
+</head>  
+<body>    <h1>Product popup demo</h1>    <!-- Example product buttons for testing -->    <div>  
+    <button onclick="openPopup({ name: 'Product A', price: '₹1,299', img: 'https://via.placeholder.com/400x300?text=Product+A', video: 'https://www.w3schools.com/html/mov_bbb.mp4' })">Open Product A</button>  
+    <button onclick="openPopup({ name: 'Product B', price: '₹2,499', img: 'https://via.placeholder.com/400x300?text=Product+B', video: '' })">Open Product B (no video)</button>  
+  </div>    <!-- POPUP -->    <div class="popup" id="popup" aria-hidden="true">  
+    <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="pName">  
+      <div>  
+        <h2 id="pName">Product Name</h2>  
+        <div class="price" id="pPrice">₹0</div>  
+        <img id="pImg" alt="Product image">  
+        <div class="controls">  
+          <button id="addToCartBtn">Add to cart</button>  
+          <button id="buyBtn">Buy (WhatsApp)</button>  
+          <button onclick="closePopup()">Close</button>  
+        </div>  
+      </div>  
+      <div>  
+        <video id="pVideo" controls playsinline style="width:100%; background:#000;" preload="none"></video>  
+      </div>  
+    </div>  
+  </div>    <script>  
+    // Single currentProduct object used by addToCart / buy  
+    let currentProduct = null;  
   
-<div class="popup" id="popup">
-  <div class="popup-box">
-    <h2 id="pName"></h2>
-    <div class="price" id="pPrice"></div>
-    <img id="pImg">
-    <video id="pVideo" controls></video>
-
-    <button id="buyBtn">Buy on WhatsApp</button>
-    <button class="close" onclick="closePopup()">Close</button>
-  </div>
-</div>
-
-<script>
-<script>
-function openPopup(name, price, img, video) {
-  const popup = document.getElementById("popup");
-  const v = document.getElementById("pVideo");
-
-  popup.style.display = "flex";
-
-  document.getElementById("pName").innerText = name;
-  document.getElementById("pPrice").innerText = price;
-  document.getElementById("pImg").src = img;
-
-  // 🔥 HARD RESET VIDEO
-  v.pause();
-  v.removeAttribute("src");
-  v.load();
-
-  setTimeout(() => {
-    v.src = video;
-    v.load();
-  }, 200);
-
-  document.getElementById("buyBtn").onclick = function () {
-    window.open(
-      "https://wa.me/91XXXXXXXXXX?text=I want to buy " + name,
-      "_blank"
-    );
-  };
-}
-
-function closePopup() {
-  const v = document.getElementById("pVideo");
-  v.pause();
-  v.removeAttribute("src");
-  v.load();
-  document.getElementById("popup").style.display = "none";
-}
-</script>
-  function closePopup() {
-  document.getElementById("popup").style.display = "none";
-  document.getElementById("pVideo").pause();
-}
-
-function addToCart() {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push(currentProduct);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert("Product added to cart!");
-<!-- POPUP -->
-<div class="popup" id="popup">
-  <div class="popup-box">
-    <h2 id="pName"></h2>
-    <div class="price" id="pPrice"></div>
-    <img id="pImg">
-    <button onclick="closePopup()">Close</button>
-  </div>
-</div>
-
-</body>
-</html>
-....
-</script>
-</body>
-</html>
+    // Helper: safely hard-reset a video element then set new src after a short delay  
+    function hardResetAndSetVideoSrc(videoEl, src) {  
+      // Stop and detach any existing source  
+      try {  
+        videoEl.pause();  
+      } catch (e) { /* ignore */ }  
+      videoEl.removeAttribute('src');  
+      // If there are <source> children remove them  
+      Array.from(videoEl.querySelectorAll('source')).forEach(s => s.remove());  
+      // Force reload to clear current buffer  
+      try { videoEl.load(); } catch (e) { /* ignore */ }  
+  
+      if (!src) {  
+        // nothing to set  
+        return;  
+      }  
+  
+      // small delay can help browsers clear previous buffer/state  
+      setTimeout(() => {  
+        videoEl.src = src;  
+        try { videoEl.load(); } catch (e) { /* ignore */ }  
+        // attempt autoplay (may be blocked by browser policies)  
+        videoEl.play().catch(() => {});  
+      }, 200);  
+    }  
+  
+    function openPopup(product) {  
+      if (!product || !product.name) return;  
+  
+      currentProduct = product;  
+  
+      const popup = document.getElementById('popup');  
+      const v = document.getElementById('pVideo');  
+  
+      document.getElementById('pName').innerText = product.name;  
+      document.getElementById('pPrice').innerText = product.price || '';  
+      document.getElementById('pImg').src = product.img || '';  
+      document.getElementById('pImg').alt = product.name || 'Product image';  
+  
+      // Reset and set video if provided; otherwise clear video element  
+      hardResetAndSetVideoSrc(v, product.video || '');  
+  
+      // Buy button opens WhatsApp with encoded message  
+      const buyBtn = document.getElementById('buyBtn');  
+      buyBtn.onclick = function () {  
+        const phone = '91XXXXXXXXXX'; // replace with real number  
+        const message = encodeURIComponent('I want to buy ' + product.name);  
+        const url = 'https://wa.me/' + phone + '?text=' + message;  
+        window.open(url, '_blank');  
+      };  
+  
+      // Add to cart button handler  
+      document.getElementById('addToCartBtn').onclick = addToCart;  
+  
+      // Show popup  
+      popup.style.display = 'flex';  
+      popup.setAttribute('aria-hidden', 'false');  
+  
+      // Allow clicking outside the popup-box (on overlay) to close  
+      setTimeout(() => { // delay adding listener so this click doesn't immediately close  
+        popup.addEventListener('click', overlayClickHandler);  
+        document.addEventListener('keydown', escapeKeyHandler);  
+      }, 0);  
+    }  
+  
+    function closePopup() {  
+      const popup = document.getElementById('popup');  
+      const v = document.getElementById('pVideo');  
+  
+      // Stop and clear video  
+      hardResetAndSetVideoSrc(v, '');  
+  
+      // Hide popup  
+      popup.style.display = 'none';  
+      popup.setAttribute('aria-hidden', 'true');  
+  
+      // cleanup listeners  
+      popup.removeEventListener('click', overlayClickHandler);  
+      document.removeEventListener('keydown', escapeKeyHandler);  
+  
+      // clear current product (optional)  
+      currentProduct = null;  
+    }  
+  
+    function overlayClickHandler(ev) {  
+      // close when clicking on the overlay (but not on the popup-box)  
+      const box = document.querySelector('.popup-box');  
+      if (!box.contains(ev.target)) {  
+        closePopup();  
+      }  
+    }  
+  
+    function escapeKeyHandler(ev) {  
+      if (ev.key === 'Escape') closePopup();  
+    }  
+  
+    function addToCart() {  
+      if (!currentProduct) {  
+        alert('No product selected');  
+        return;  
+      }  
+      // Save minimal product info to cart; avoid storing functions/DOM  
+      const productToStore = {  
+        name: currentProduct.name,  
+        price: currentProduct.price,  
+        img: currentProduct.img,  
+        addedAt: new Date().toISOString()  
+      };  
+  
+      let cart;  
+      try {  
+        cart = JSON.parse(localStorage.getItem('cart') || '[]');  
+        if (!Array.isArray(cart)) cart = [];  
+      } catch (e) {  
+        cart = [];  
+      }  
+      cart.push(productToStore);  
+      localStorage.setItem('cart', JSON.stringify(cart));  
+      alert('Product added to cart!');  
+    }  
+  
+    // Optional: expose functions for console/testing  
+    window.openPopup = openPopup;  
+    window.closePopup = closePopup;  
+    window.addToCart = addToCart;  
+  </script>  </body>  
+                                </html>
